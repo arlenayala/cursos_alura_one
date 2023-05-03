@@ -1,0 +1,36 @@
+<canvas width="600" height="400"></canvas>
+
+
+
+<script>
+
+var pantalla = document.querySelector("canvas");//esta variable me va a conectar con la etiqueta canvasde  html con script
+var pincel=pantalla.getContext("2d");//creo la variable pincel que me dice: traeme todo el contenido que este en la pantalla y estamos trabajando en 2 dimensiones ancho y largo
+
+
+pincel.fillStyle = "lightgrey"; // es una propiedad o caracteristica, es como una variable y tengo que pasarle algun valor en este caso el color de mi pantalla
+pincel.fillRect(0,0,600,400);// es una funcion que le estoy pasando estos parametros
+
+pincel.fillStyle = "green"; // es una propiedad o caracteristica, es como una variable y tengo que pasarle algun valor en este caso el color de mi pantalla
+pincel.fillRect(0,0,200,400);// es una funcion del objeto que le estoy pasando estos parametros y es para diseñar figuras
+
+pincel.fillStyle = "red"; // es una propiedad o caracteristica, es como una variable y tengo que pasarle algun valor en este caso el color de mi pantalla
+pincel.fillRect(400,0,200,400);// es una funcion que le estoy pasando estos parametros
+
+pincel.fillStyle = "yellow";
+pincel.beginPath();//iniciar una nueva ruta o direccion por mi ventana
+pincel.moveTo(300,200);//me mueve al centro segun el parametro
+pincel.lineTo(200,400);//crea lineas segun el parametro
+pincel.lineTo(400,400);//crea lineas segun el parametro
+pincel.fill();//me rellena la figura que estamos creando
+
+pincel.fillStyle = "blue";
+pincel.beginPath();
+pincel.arc(300,200,50,0,2*3.14);//crea una circunferencia con parametros(posicion inial,radio,angulo inicial,angulo final)
+pincel.fill();
+
+
+
+
+
+</script>

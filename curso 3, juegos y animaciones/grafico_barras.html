@@ -1,0 +1,52 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+
+
+var colores= ["blue","green","yellow","red","gray"]
+var serie2009 = [6, 47, 41, 3, 3];
+var serie2019 = [81, 9, 3, 3, 4];
+
+dibujarBarra(50, 50, serie2009, colores, "2009");
+dibujarBarra(50, 150, serie2019, colores, "2019");
+
+function dibujarBarra(x,y,serie,colores,texto){
+
+    escribirTexto(x-50,y,texto); 
+
+    var acumulado = 0;
+for (let index = 0; index < serie.length; index++) {
+        dibujarRectangulo(x+acumulado,y,30,serie[index],colores[index])
+        acumulado= acumulado+serie[index];
+        
+   }
+}
+
+
+
+
+
+    function dibujarRectangulo(x, y, base, altura, color) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle=color;
+        pincel.fillRect(x,y, altura, base);
+        pincel.strokeStyle=color;
+        pincel.strokeRect(x,y, altura, base);
+    }
+
+    function escribirTexto(x , y, texto) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText(texto, x, y);    
+    }
+
+
+    
+
+</script>

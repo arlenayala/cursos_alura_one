@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA MUNDIAL DE LA FIFA</h1>
+
+
+<script>
+
+var anhomundial = 1930;
+var limite= parseInt(prompt(" ingrese el año limite para calcular "));
+
+while(anhomundial <= limite) {
+
+imprimir(" hubo mundial de la fifa en el año" + anhomundial);
+anhomundial= anhomundial + 4;
+}
+
+imprimir(" fin ");
+
+function saltarlinea () {   
+    document.write ("<br>" ); 
+    document.write ("<br>" );
+    document.write ("<br>" );
+}
+ 
+
+function imprimir (frase) {
+
+    document.write (frase );
+    saltarlinea ();
+}
+
+</script> 

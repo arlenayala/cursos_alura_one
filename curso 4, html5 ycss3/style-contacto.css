@@ -1,0 +1,251 @@
+body {
+
+    font-family: 'Montserrat', sans-serif;
+    
+
+}
+
+header{
+    background-color: #bbbbbb;
+    padding: 20px 0;
+}
+
+.caja {
+
+    width: 940px;
+    position: relative;
+    margin: 0 auto;   
+}
+
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+
+}
+
+nav li {
+    display: inline;  
+    margin:0 0 0  15px;
+}
+
+nav a {
+    text-transform: upercasse;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover {
+
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+
+
+footer {
+    text-align: center;
+    background: url(imagenes/bg.jpg);
+    padding: 40px;
+}
+
+.copyrigth {
+    color:#ffffff;
+    font-size: 13px;
+    margin: 20px;
+}
+
+
+
+form {
+
+    margin: 40px 0;
+   
+}
+
+form label,form legend {
+
+    display: block;
+    font-size: 20px;
+    margin:0 0 10px
+}
+
+.padron {
+   display: block;
+   margin: 0 0 20px;
+   padding: 15px 20px;
+   width: 50%;
+   
+}
+
+.checkbox{
+    margin:20px 0;
+}
+.enviar {
+
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold ;
+    border: none;
+    border-radius: 10px;
+    background: orange;
+    transition: 1s all;
+    cursor: pointer;
+    width: 40%;
+    padding: 15px 0 
+ 
+    
+}
+.enviar:hover {
+    background: darkorange;
+    transform: scale(1.2)rotate(70deg);;
+}
+
+table {
+    margin: 40px 40px;
+}
+
+thead {
+    background: gray;
+    color: #ffffff;
+    font-weight: bold;
+}
+td,th {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
+/*css para nuestra pagina home*/
+
+.banner {
+
+    width: 100%;
+}
+
+.principal {
+   
+    width: 940px;
+    margin: 0 auto;
+    padding: 3em 0;
+    background:#fefefe ;
+    
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+    
+}
+
+.principal p {
+    margin: 0 0 1em;   
+    
+}
+
+.principal strong {
+
+    font-weight: bold;
+}
+
+.principal em {
+    font-style: italic;
+}
+
+.utensilios {
+    width: 120px;
+    float: left;
+    margin: 0 20px 20px 20px;
+}
+
+.mapa {
+
+    background:linear-gradient(#fefefe,#888888);
+    padding: 3em 0 ;
+}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.mapa-contenido {
+    width: 940px;
+    margin: 0 auto;
+
+}
+
+.diferenciales {
+  
+    padding:0 auto;
+    background:#888888 ;
+}
+
+.contenido-diferenciales{
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-diferenciales {
+
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+
+}
+.items {
+    line-height: 1.5;
+
+}
+.items:before {
+    content: "★";
+
+}
+
+.items:first-child {
+
+    font-weight: bold;
+}
+
+.imagenDiferenciales {
+    width: 60%;
+    transition: 400ms;
+    box-shadow: 10px 10px 30px 15px #000000;
+   
+}
+.imagenDiferenciales:hover {
+    opacity: 0.3;
+
+}
+
+.video {
+
+    width: 540px;
+    margin: 1em 300px;
+
+}
+
+@media screen and (max-width:480px){
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+    .caja, .principal,.mapa-contenido,.contenido-diferenciales,.video {
+        width: auto;
+    }
+
+    .lista-diferenciales,.imagenDiferenciales {
+
+        width: 100%;
+    }
+    
+}
+
+
+

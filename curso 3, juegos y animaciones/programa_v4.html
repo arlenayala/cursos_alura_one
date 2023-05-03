@@ -1,0 +1,52 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");    
+    pincel.fillStyle = "pink";
+    pincel.fillRect(0,0,600,400); 
+
+   
+ setInterval(actualizarPantalla,3);//esta funcion que viene por defecto en el programa me da un intervalo de microsegundos a deseñar circunferencia. 
+ //setInterval(actualizarPantalla(40,10),3);
+ 
+ 
+ 
+ var x = 0
+
+function actualizarPantalla(){
+
+    limpiarPantalla();//queremos que limpie la pantalla.lo dejamos de primer lugar porque queremos que limpie y quede la ultima circunferencia
+    disenharCircuferencia(x,20,10);//dejo el eje x sin valor porque es el eje por donde se van a mover los circulos
+    x++// para que vuelva y reita el circulo en el eje x
+}
+
+
+ function limpiarPantalla(){
+
+    pincel.clearRect(0,0,600,400);
+    }
+
+
+   function disenharCircuferencia (x,y,radio){
+        
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        
+acumulado=0
+        for (let posicion = 0; posicion < 3; posicion++) {
+            pincel.arc(x+acumulado,y,radio,0,2*Math.PI);
+            pincel.fill();
+            acumulado=acumulado+20
+            
+        }
+    
+
+    }
+
+
+
+   
+
+</script> 

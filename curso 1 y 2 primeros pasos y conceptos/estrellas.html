@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<h1>JUEGO DE ESTRELLAS</h1>
+
+
+<script>
+
+function saltarlinea () {   
+    document.write ("<br>" ); 
+    
+}
+ 
+
+function imprimir (frase) {
+
+    document.write (frase );
+    saltarlinea ();
+}
+
+for (var lineas = 1; lineas  <= 3 ; lineas++) {
+   for (var columna = 1; columna <=10; columna++) {
+       
+        document.write (" * ");
+    
+    }
+    saltarlinea ();
+   
+} 
+
+
+saltarlinea();
+saltarlinea();
+
+imprimir("fin")
+
+
+</script> 

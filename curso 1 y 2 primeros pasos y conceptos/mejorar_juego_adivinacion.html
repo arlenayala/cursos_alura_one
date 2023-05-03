@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<h1>JUEGO DE ADIViNACION</h1>
+
+
+<script>
+
+function saltarlinea () {   
+    document.write ("<br>" ); 
+    document.write ("<br>" );
+    document.write ("<br>" );
+}
+ 
+
+function imprimir (frase) {
+
+    document.write (frase );
+    saltarlinea ();
+}
+
+
+var numeropensado = Math.round(Math.random()*10); //para que el numero pensado por la maquina sea variable
+//var numeroLanzado = parseInt(prompt(" ingrese un numero entre 0 y 10"));
+var intentos= 3 ;//para que el navegador tenga tres intentos
+var contador = 1;
+
+while (contador <= intentos) {
+
+var numeroLanzado = parseInt(prompt(" ingrese un numero entre 0 y 10"));
+
+if (numeropensado == numeroLanzado) {
+
+    
+
+    alert(" usted acerto, en el intento " + contador + " el numero pensado era:" + numeropensado);
+
+    break; //si cumple con esta iteracion corta o de un freno para que no me siga mandand la variable de numero lanzado
+}
+
+
+else {
+    alert(" usted erró ");
+
+} 
+contador++;
+
+}
+
+if (numeropensado == numeroLanzado) {
+
+  
+imprimir(" usted acerto, en el intento " + contador + " el numero pensado era:" + numeropensado);
+
+}
+
+      else {
+
+    imprimir(" usted erró, el numero pensado era" + numeropensado);
+
+}
+
+imprimir("fin")
+
+
+</script> 

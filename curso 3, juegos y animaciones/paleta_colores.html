@@ -1,0 +1,95 @@
+<canvas width="800" height="600"></canvas>
+
+<script>
+
+var pantalla=document.querySelector("canvas");
+var pincel=pantalla.getContext("2d")
+
+
+pincel.fillRect(0,0,800,600);
+pincel.fillStyle="gray";
+
+var color=["pink","yellow","blue"]
+var colorActual="blue";
+y=0
+var puedoPintar=false
+
+for (let posicion = 0; posicion <3; posicion++) {
+    cuadros(0,y,color[posicion]);
+    y=y+90   
+}
+
+pantalla.onmousedown=habilitoPintar;
+pantalla.onmousemove=dibujoCirculo;
+pantalla.onmouseup=deshabilitoPintar;
+pantalla.onclick= verificarCuadros;
+
+
+function dibujoCirculo(evento){
+    if(puedoPintar==true){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        
+        if(x<=90&&y<=270){
+            puedoPintar=false
+        }else{
+            pincel.fillStyle=colorActual
+            pincel.beginPath();
+            pincel.arc(x,y,10,0,2*3.14);
+            pincel.fill();
+    }
+
+    }
+
+}
+
+function habilitoPintar(){
+    puedoPintar=true
+}
+
+function deshabilitoPintar(){
+    puedoPintar=false
+}
+
+function cuadros(x,y,color){
+
+   var pantalla=document.querySelector("canvas");
+   var pincel=pantalla.getContext("2d");
+   pincel.fillStyle=color;
+   pincel.beginPath();
+   pincel.fillRect(x,y,90,90);
+}
+
+function verificarCuadros(evento){
+    var x = evento.pageX - pantalla.offsetLeft;
+    var y = evento.pageY - pantalla.offsetTop;
+
+    if(x<=90&&y<=270){
+        console.log("hicieron clic dentro del cuadro");
+        if(x<=90&&y<=90){
+        colorActual="pink"
+     }
+        if(x<=90&&y>=90&&y<=180){
+        colorActual="yellow"
+     }
+       if(x<=90&&y>=180&&y<=270){
+        colorActual="blue"
+
+     }
+
+    }else{
+        console.log("no estoy dentro del cuadro")
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+</script>

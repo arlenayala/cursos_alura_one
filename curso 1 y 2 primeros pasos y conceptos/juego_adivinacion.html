@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<h1>JUEGO DE ADIViNACION</h1>
+
+
+<script>
+
+function saltarlinea () {   
+    document.write ("<br>" ); 
+    document.write ("<br>" );
+    document.write ("<br>" );
+}
+ 
+
+function imprimir (frase) {
+
+    document.write (frase );
+    saltarlinea ();
+}
+
+function sorteo(n) {
+    return(Math.round(Math.random() *n));
+
+}
+
+var numeropensado = sorteo (10);
+var numeroLanzado = parseInt(prompt(" ingrese un numero entre 0 y 10"));
+
+if (numeropensado == numeroLanzado) {
+
+    imprimir(" usted acerto ")
+}
+
+else {
+    imprimir(" usted erró, el numero pensado era: " + numeropensado);
+
+} 
+ if (numeroLanzado > numeropensado)
+    imprimir (" usted erró, el numero pensado era menor que tu numero")
+
+    else {
+        imprimir ("usted erró, el numero pensado era mayor que tu numero")
+ 
+    }       
+
+
+
+
+</script> 

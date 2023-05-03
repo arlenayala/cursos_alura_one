@@ -1,0 +1,105 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    pincel.fillStyle = 'gray';
+    pincel.fillRect(0, 0, 600, 400);
+   
+
+var color=["red","green","blue"];
+var colorActual="blue"
+var x=0;
+for (let index = 0; index < 3; index++) {
+ 
+    dibujarCuadrado(x,0,color[index]);
+    x=x+50;
+
+}
+var puedoDibujar = false;
+
+pantalla.onmousedown = habilitarDibujar;
+
+pantalla.onmouseup = deshabilitarDibujar;
+
+pantalla.onmousemove = dibujarCirculo;
+
+pantalla.onclick=verificarCuadrado;
+
+function verificarCuadrado(evento){
+    var x = evento.pageX - pantalla.offsetLeft;
+    var y = evento.pageY - pantalla.offsetTop;
+    if(x<=150&&y<=50){
+        console.log("hicieron clic dentro de los cuadrado")
+        if(x<=50&&y<=50){
+            colorActual="red"
+        }
+        if(x>=50&&x<=100&&y<=50){
+            colorActual="green"
+
+        }
+        if(x>=100&&x<=150&&y<=50){
+            colorActual="blue"
+
+        }
+
+
+    }else {
+
+
+    }
+n
+
+
+}
+
+
+function dibujarCirculo(evento) {
+
+if(puedoDibujar) {
+    var x = evento.pageX - pantalla.offsetLeft;
+    var y = evento.pageY - pantalla.offsetTop;
+    pincel.fillStyle = colorActual;
+  
+
+    if(x<=150&&y<=50){
+        console.log("no puedo pintar estoy dentro de los cuadrados")
+
+    }else {
+    pincel.beginPath();
+    pincel.arc(x, y, 5, 0, 2 * 3.14);
+    pincel.fill();
+
+    }
+}
+
+}
+
+
+function habilitarDibujar() {
+
+puedoDibujar = true;
+}
+
+function deshabilitarDibujar() {
+
+puedoDibujar = false;
+}
+
+
+function dibujarCuadrado(x,y,color){
+
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+    pincel.beginPath();
+    pincel.fillStyle = color;
+    pincel.fillRect(x,y,50,50);
+   
+
+
+} 
+
+</script>
+    
